@@ -1,4 +1,5 @@
-// Define character abilities and traits
+//Characters and abilities (some added )
+
 const characterRoster = [
   {
       name: "Robin",
@@ -47,7 +48,7 @@ const characterRoster = [
           dexterity: 12,
           constitution: 10,
           wisdom: 18
-      }
+      },
   },
   {
       name: "Grace",
@@ -63,9 +64,24 @@ const characterRoster = [
           dexterity: 12,
           constitution: 14,
           wisdom: 18
-      }
+      },
   },
   {
+    name:"Monster",
+    role: "Enemy",
+    abilities: {
+        primary: "Fire Breathing",
+        secondary: "Pyro Technology",
+        ultimate: "Destiny Interrupter",
+        passive: "Power Winged",
+
+    },
+    stats: {
+        strength:12,
+        dexterity: 10,
+        constitution: 13,
+        wisdom: 10,
+    }
     
       }
   
@@ -267,8 +283,10 @@ const healerFactory = new AdventurerFactory("Healer");
 const robin = healerFactory.generate("Robin");
 const leo = new Companion("Leo", "Cat");
 const frank = new Companion("Frank", "Flea");
-const sara = new Companion("Sara");
+const sara = new Companion ("Sara", "Fighter");
 const grace = healerFactory.generate("Grace");
+const merlin = new Companion("Merlin", "Wizard");
+const monster = new Companion ("Monster", "Villain")
 
 
 robin.companion = leo;
@@ -282,4 +300,6 @@ frank.roll();
 robin.specialAbility();
 sara.roll();
 grace.specialAbility();
+
+
 
